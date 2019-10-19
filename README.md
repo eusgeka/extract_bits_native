@@ -27,3 +27,15 @@ This is a C++ implementation of the [extract_bits](https://github.com/eusgeka/ex
 
 * The first one uses the fast pass. This is the O(m)
 * The second uses a more traditional pass that is O(n)
+
+## Build
+
+This is a CMake project (minimum version 3.10)
+
+* Install CMake (Ubuntu 18.04 example) : ```sudo apt install cmake```
+* ```chmod +x make_this.sh```
+* ```chmod +x clean_this.sh```
+* Use the **make_this.sh** to build the CMake project
+  * ```./make_this.sh``` The shared library is located in **bin** directory.
+* Use the **clean_this.sh** to clean the build directories **build** and **bin**
+  * ```./clean_this.sh``` Both **build** and **bin** are removed
