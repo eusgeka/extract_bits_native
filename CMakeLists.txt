@@ -42,5 +42,7 @@ add_executable(extract_bits_native
                 ${CMAKE_SOURCE_DIR}/main.cpp
                 ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits.hpp
                 ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_traditional_pass.hpp
+                ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_fast_pass.hpp
                 ${CMAKE_SOURCE_DIR}/extract_bits.cpp
-                ${CMAKE_SOURCE_DIR}/extract_bits_traditional_pass.cpp)
+                ${CMAKE_SOURCE_DIR}/extract_bits_traditional_pass.cpp
+                ${CMAKE_SOURCE_DIR}/extract_bits_fast_pass.cpp)

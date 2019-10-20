@@ -16,20 +16,22 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-#ifndef EXTRACT_BITS_HPP
-#define EXTRACT_BITS_HPP
+#ifndef EXTRACT_BITS_FAST_PASS_HPP
+#define EXTRACT_BITS_FAST_PASS_HPP
 
 #include <vector>
-
+#include <extract_bits.hpp>
 using namespace std;
 
-class ExtractBits {
-protected:
-    const static short LOW_LIMIT_OF_INPUT_NUMBER = 1;
+/**
+ * @brief The ExtractBitsTraditionalPass class
+ */
+class ExtractBitsFastPass : virtual public ExtractBits {
 public:
-    virtual ~ExtractBits();
+    ExtractBitsFastPass();
+    ~ExtractBitsFastPass();
 
-    virtual void summationOfSetBits(std::vector<long> *, long) = 0;
+    void summationOfSetBits(std::vector<long> *, long);
 };
 
-#endif // EXTRACT_BITS_HPP
+#endif // EXTRACT_BITS_FAST_PASS_HPP

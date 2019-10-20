@@ -19,6 +19,7 @@
 #include <iostream>
 
 #include <extract_bits_traditional_pass.hpp>
+#include <extract_bits_fast_pass.hpp>
 
 int main(int argc, char* argv[]) {
     long inputNumber = 0;
@@ -26,8 +27,32 @@ int main(int argc, char* argv[]) {
         inputNumber = atoi(argv[1]);
     }
 
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << " ======================================== " << std::endl;
+    std::cout << " ========== Traditional Pass ============ " << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+
     ExtractBits * extractBits = new ExtractBitsTraditionalPass();
     std::vector<long> longList;
+    extractBits->summationOfSetBits(&longList, inputNumber);
+    delete extractBits;
+    extractBits = nullptr;
+
+    std::cout << "For the " << inputNumber << " the extracted bits are " << std::endl;
+    for (unsigned long index = 0; index < longList.size(); index++) {
+        std::cout << longList.at(index) << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << " ======================================== " << std::endl;
+    std::cout << " ============= Fast Pass ================ " << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    extractBits = new ExtractBitsFastPass();
     extractBits->summationOfSetBits(&longList, inputNumber);
     delete extractBits;
     extractBits = nullptr;
