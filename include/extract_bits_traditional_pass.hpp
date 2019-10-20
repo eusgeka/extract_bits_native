@@ -27,6 +27,8 @@ using namespace std;
  * @brief The ExtractBitsTraditionalPass class
  */
 class ExtractBitsTraditionalPass : virtual public ExtractBits {
+private:
+    const static int CHAR_ONE_AS_ASCII = 49;
 public:
     ExtractBitsTraditionalPass();
     ~ExtractBitsTraditionalPass();

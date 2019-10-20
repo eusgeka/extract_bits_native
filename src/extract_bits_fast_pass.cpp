@@ -17,26 +17,20 @@
  */
 
 #include <iostream>
-#include <string>
-#include <bitset>
-#include <math.h>
 
-#include <extract_bits_traditional_pass.hpp>
-
-#undef EXTRACT_BITS_SIZE
-#define EXTRACT_BITS_SIZE (64)
+#include <extract_bits_fast_pass.hpp>
 
 /**
  * @brief ExtractBitsTraditionalPass::ExtractBitsTraditionalPass
  */
-ExtractBitsTraditionalPass::ExtractBitsTraditionalPass() {
+ExtractBitsFastPass::ExtractBitsFastPass() {
 
 }
 
 /**
  * @brief ExtractBitsTraditionalPass::~ExtractBitsTraditionalPass
  */
-ExtractBitsTraditionalPass::~ExtractBitsTraditionalPass() {
+ExtractBitsFastPass::~ExtractBitsFastPass() {
 }
 
 /**
@@ -44,25 +38,21 @@ ExtractBitsTraditionalPass::~ExtractBitsTraditionalPass() {
  * @param longList
  * @param inputNumber
  */
-void ExtractBitsTraditionalPass::summationOfSetBits(std::vector<long> * longList, long inputNumber) {
+void ExtractBitsFastPass::summationOfSetBits(std::vector<long> * longList, long inputNumber) {
     longList->clear();
     if (inputNumber < LOW_LIMIT_OF_INPUT_NUMBER) {
         return;
     }
-    std::string numberAsString =
-            std::bitset<EXTRACT_BITS_SIZE>(static_cast<unsigned long>(inputNumber)).to_string();
 
-    int powerOf = 0;
     int howManyIterations = 0;
+    long extractedNumber = 0;
+    while (inputNumber != 0) {
+        extractedNumber = inputNumber;
+        inputNumber &= (inputNumber - 1);
+        extractedNumber ^= inputNumber;
 
-    for (int index = static_cast<int>(numberAsString.length()) - 1; index >= 0; index--) {
-        int extractedNumber = static_cast<int>(numberAsString.at(static_cast<unsigned long>(index)));
-        if (extractedNumber == CHAR_ONE_AS_ASCII) {
-            long extractedLong = static_cast<long>(pow(2, powerOf));
-            longList->push_back(extractedLong);
-        }
         howManyIterations++;
-        powerOf++;
+        longList->push_back(extractedNumber);
     }
-    std::cout << "For the traditional pass the iterations are : " << howManyIterations << std::endl;
+    std::cout << "For the fast pass the iterations are : " << howManyIterations << std::endl;
 }
