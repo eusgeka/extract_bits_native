@@ -16,17 +16,20 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-#ifndef EXTRACTBITS_HPP
-#define EXTRACTBITS_HPP
+#include <iostream>
+#include <library.hpp>
 
-#include <vector>
+#include <extract_bits_traditional_pass.hpp>
 
-using namespace std;
-
-class ExtractBits {
-public:
-    virtual void summationOfSetBits(std::vector<long> *, long) = 0;
-    virtual ~ExtractBits();
-};
-
-#endif // EXTRACTBITS_HPP
+int main()
+{
+    ExtractBits * extractBits = new ExtractBitsTraditionalPass();
+    std::vector<long> longList;
+    extractBits->summationOfSetBits(&longList, 88);
+    delete extractBits;
+    extractBits = nullptr;
+    std::cout << "For the 88 the extracted bits are " << std::endl;
+    for (int index = 0; index < longList.size(); index++) {
+        std::cout << longList.at(index) << std::endl;
+    }
+}

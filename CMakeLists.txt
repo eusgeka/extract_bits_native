@@ -12,6 +12,8 @@ project(extract_bits_native)
 # C++ version
 #
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
 #
 # Set the source direcotry
@@ -37,8 +39,17 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 #
 #
 #
-add_library(extract_bits_native SHARED
-                ${CMAKE_SOURCE_DIR}/library.cpp
-                ${CMAKE_SOURCE_DIR}/extractbits.cpp
-                ${CMAKE_INCLUDE_CURRENT_DIR}/library.hpp
-                ${CMAKE_INCLUDE_CURRENT_DIR}/extractbits.hpp)
+#add_library(extract_bits_native_lib SHARED
+#                ${CMAKE_SOURCE_DIR}/main.cpp
+#                ${CMAKE_SOURCE_DIR}/library.cpp
+#                ${CMAKE_SOURCE_DIR}/extract_bits_traditional_pass.cpp
+#                ${CMAKE_INCLUDE_CURRENT_DIR}/library.hpp
+#                ${CMAKE_INCLUDE_CURRENT_DIR}/extractbits.hpp
+#                ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_traditional_pass.hpp)
+
+add_executable(extract_bits_native
+                ${CMAKE_SOURCE_DIR}/main.cpp
+                ${CMAKE_INCLUDE_CURRENT_DIR}/extractbits.hpp
+                ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_traditional_pass.hpp
+                ${CMAKE_SOURCE_DIR}/extract_bits.cpp
+                ${CMAKE_SOURCE_DIR}/extract_bits_traditional_pass.cpp)

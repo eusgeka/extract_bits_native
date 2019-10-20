@@ -16,17 +16,9 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-#ifndef EXTRACTBITS_HPP
-#define EXTRACTBITS_HPP
+#include <extractbits.hpp>
 
-#include <vector>
-
-using namespace std;
-
-class ExtractBits {
-public:
-    virtual void summationOfSetBits(std::vector<long> *, long) = 0;
-    virtual ~ExtractBits();
-};
-
-#endif // EXTRACTBITS_HPP
+/**
+ * @brief ExtractBits::~ExtractBits
+ */
+ExtractBits::~ExtractBits() {}
