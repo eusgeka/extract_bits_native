@@ -17,8 +17,12 @@
  */
 
 #include <iostream>
+#include <bitset>
 
 #include <extract_bits_fast_pass.hpp>
+
+#undef EXTRACT_BITS_SIZE
+#define EXTRACT_BITS_SIZE (sizeof(long) * 8)
 
 /**
  * @brief ExtractBitsTraditionalPass::ExtractBitsTraditionalPass
@@ -43,6 +47,10 @@ void ExtractBitsFastPass::summationOfSetBits(std::vector<long> * longList, long 
     if (inputNumber < LOW_LIMIT_OF_INPUT_NUMBER) {
         return;
     }
+
+    std::cout << "The input number : "
+              << inputNumber << " as binay  "
+              << std::bitset<EXTRACT_BITS_SIZE>(static_cast<unsigned long>(inputNumber)) << std::endl;
 
     int howManyIterations = 0;
     long extractedNumber = 0;
