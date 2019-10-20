@@ -4,3 +4,7 @@ build/
 CMakeLists.txt.user
 CMakeFiles/
 extract_bits_native.cbp
+CMakeCache.txt
+CMakeLists.txt.autosave
+Makefile
+cmake_install.cmake

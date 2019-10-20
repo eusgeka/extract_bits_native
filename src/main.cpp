@@ -17,19 +17,23 @@
  */
 
 #include <iostream>
-#include <library.hpp>
 
 #include <extract_bits_traditional_pass.hpp>
 
-int main()
-{
+int main(int argc, char* argv[]) {
+    long inputNumber = 0;
+    if (argc > 1) {
+        inputNumber = atoi(argv[1]);
+    }
+
     ExtractBits * extractBits = new ExtractBitsTraditionalPass();
     std::vector<long> longList;
-    extractBits->summationOfSetBits(&longList, 88);
+    extractBits->summationOfSetBits(&longList, inputNumber);
     delete extractBits;
     extractBits = nullptr;
-    std::cout << "For the 88 the extracted bits are " << std::endl;
-    for (int index = 0; index < longList.size(); index++) {
+
+    std::cout << "For the " << inputNumber << " the extracted bits are " << std::endl;
+    for (unsigned long index = 0; index < longList.size(); index++) {
         std::cout << longList.at(index) << std::endl;
     }
 }

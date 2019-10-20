@@ -20,7 +20,7 @@
 #define EXTRACT_BITS_TRADITIONAL_PASS_HPP
 
 #include <vector>
-#include <extractbits.hpp>
+#include <extract_bits.hpp>
 using namespace std;
 
 /**
