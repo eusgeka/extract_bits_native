@@ -47,8 +47,11 @@ add_executable(ut_traditional_pass
                         ${CMAKE_SOURCE_DIR}/test/extract_bits_native_test.cpp
                         ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits.hpp
                         ${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_traditional_pass.hpp
+			${CMAKE_INCLUDE_CURRENT_DIR}/extract_bits_fast_pass.hpp
                         ${CMAKE_SOURCE_DIR}/src/extract_bits.cpp
-                        ${CMAKE_SOURCE_DIR}/src/extract_bits_traditional_pass.cpp)
+                        ${CMAKE_SOURCE_DIR}/src/extract_bits_traditional_pass.cpp
+			${CMAKE_SOURCE_DIR}/src/extract_bits_fast_pass.cpp
+			)
 
 target_link_libraries(ut_traditional_pass gtest_main)
 add_test(NAME ut_traditional_pass COMMAND ut_traditional_pass)
