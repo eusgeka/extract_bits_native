@@ -52,6 +52,8 @@ void ExtractBitsTraditionalPass::summationOfSetBits(std::vector<long> * longList
     std::string numberAsString =
             std::bitset<EXTRACT_BITS_SIZE>(static_cast<unsigned long>(inputNumber)).to_string();
 
+    std::cout << "The input number : " << inputNumber << " as binay  " << numberAsString << std::endl;
+
     int powerOf = 0;
     int howManyIterations = 0;
 
