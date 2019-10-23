@@ -39,6 +39,9 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+set(CMAKE_BINARY_DIR ${PROJECT_SOURCE_DIR}/../bin_test)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(ut_traditional_pass 
                         ${CMAKE_SOURCE_DIR}/test/extract_bits_native_test.cpp
