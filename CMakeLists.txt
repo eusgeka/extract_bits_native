@@ -34,6 +34,14 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 #
+# Use google test for unit test
+#
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    include(CTest)
+endif()
+add_subdirectory(gtest)
+
+#
 # Include Directories
 #
 include_directories("${PROJECT_SOURCE_DIR}/include")
