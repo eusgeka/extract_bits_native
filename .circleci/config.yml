@@ -2,9 +2,6 @@ version: 2
 
 jobs:
   build:
-    branches:
-      only:
-        - /feature_circle_ci/
     docker:
       - image: "ubuntu:bionic-20191010"
     steps:
