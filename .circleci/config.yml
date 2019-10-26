@@ -6,7 +6,7 @@ jobs:
       only:
         - /feature_circle_ci/
     docker:
-      - image: "debian:stretch"
+      - image: "ubuntu:bionic-20191010"
     steps:
       - checkout
       - run:
