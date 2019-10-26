@@ -32,4 +32,4 @@ jobs:
           command: 'cmake --build build -- -j3'
       - run:
           name: Change dir to build
-          command: 'ctest'
+          command: 'cd build/ && ctest && cd ..'
