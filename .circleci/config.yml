@@ -14,7 +14,10 @@ jobs:
           command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
       - run:
           name: Install Git
-          command: 'apt-get update && apt-get install -y git-all'
+          command: 'apt-get update && apt-get install -y git'
+      - run:
+          name: Display git version
+          command: 'git --version'
       - run:
           name: Installing GCC
           command: 'apt-get update && apt-get install -y gcc g++'
