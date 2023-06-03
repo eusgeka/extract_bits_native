@@ -9,3 +9,5 @@ CMakeCache.txt
 CMakeLists.txt.autosave
 Makefile
 cmake_install.cmake
+extract_bits_native.code-workspace
+.vscode/
